@@ -38,6 +38,10 @@ For production, use gunicorn:
 gunicorn app:app
 ```
 
+## Built With Claude Code
+
+This entire app -- backend, frontend, UI, and deployment config -- was built using [Claude Code](https://claude.ai/code), Anthropic's CLI tool for AI-assisted software engineering.
+
 ## License
 
 MIT
