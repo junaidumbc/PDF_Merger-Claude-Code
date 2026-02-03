@@ -2,6 +2,8 @@
 
 A simple, fast, and private web app to merge multiple PDF files into one. Built with Flask and Bootstrap 5.
 
+### [Try the live app here](https://pdf-merger-claude-code.onrender.com/)
+
 ## Features
 
 - **Drag & Drop** -- Upload PDFs by dragging them into the browser
