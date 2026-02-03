@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}PDF Merger - Combine PDFs Easily{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6">
+                <div class="hero-badge mb-3">
+                    <span class="badge rounded-pill">
+                        <i class="bi bi-lightning-charge-fill me-1"></i>Fast & Private
+                    </span>
+                </div>
+                <h1 class="display-4 fw-bold mb-3">
+                    Merge your PDFs<br>
+                    <span class="text-gradient">in seconds.</span>
+                </h1>
+                <p class="lead text-muted mb-4">
+                    Combine multiple PDF files into one document. Drag, drop, reorder,
+                    and download. No uploads to any server &mdash; everything runs locally.
+                </p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="/merge" class="btn btn-primary btn-lg rounded-pill px-4">
+                        <i class="bi bi-union me-2"></i>Start Merging
+                    </a>
+                    <a href="/about" class="btn btn-outline-secondary btn-lg rounded-pill px-4">
+                        Learn More <i class="bi bi-arrow-right ms-1"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="hero-illustration">
+                    <div class="floating-card card-1">
+                        <i class="bi bi-file-earmark-pdf"></i>
+                        <span>Report.pdf</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="bi bi-file-earmark-pdf"></i>
+                        <span>Invoice.pdf</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="bi bi-file-earmark-pdf"></i>
+                        <span>Resume.pdf</span>
+                    </div>
+                    <div class="merge-arrow">
+                        <i class="bi bi-arrow-down-circle-fill"></i>
+                    </div>
+                    <div class="floating-card card-merged">
+                        <i class="bi bi-file-earmark-pdf-fill"></i>
+                        <span>Merged.pdf</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Why use PDF Merger?</h2>
+            <p class="text-muted">Simple, powerful, and built with privacy in mind.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-shield-lock-fill"></i>
+                    </div>
+                    <h5 class="fw-semibold">100% Private</h5>
+                    <p class="text-muted mb-0">
+                        Your files are processed locally on your machine. Nothing is ever uploaded to external servers.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-lightning-charge-fill"></i>
+                    </div>
+                    <h5 class="fw-semibold">Lightning Fast</h5>
+                    <p class="text-muted mb-0">
+                        Merge dozens of PDFs in seconds. No waiting for uploads or server processing.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="bi bi-arrows-move"></i>
+                    </div>
+                    <h5 class="fw-semibold">Drag & Reorder</h5>
+                    <p class="text-muted mb-0">
+                        Easily rearrange your PDF files in any order before merging them together.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

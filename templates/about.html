@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}About - PDF Merger{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container" style="max-width: 700px;">
+        <div class="text-center mb-5">
+            <div class="about-icon mb-3">
+                <i class="bi bi-file-earmark-pdf-fill"></i>
+            </div>
+            <h2 class="fw-bold">About PDF Merger</h2>
+            <p class="text-muted">A simple, fast, and private tool for combining PDF files.</p>
+        </div>
+
+        <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body p-4">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-question-circle me-2 text-primary"></i>How it works</h5>
+                <ol class="mb-0">
+                    <li class="mb-2">Upload or drag-and-drop your PDF files into the merge page.</li>
+                    <li class="mb-2">Reorder the files by dragging them into your preferred sequence.</li>
+                    <li class="mb-2">Click <strong>Merge PDFs</strong> to combine them into a single document.</li>
+                    <li class="mb-0">Download your merged PDF instantly.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body p-4">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-shield-check me-2 text-success"></i>Privacy</h5>
+                <p class="mb-0">
+                    All processing happens on your local machine through the Flask server running on your computer.
+                    Your files are temporarily stored only during the merge operation and are deleted immediately after.
+                    No data is sent to any third-party service.
+                </p>
+            </div>
+        </div>
+
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <h5 class="fw-semibold mb-3"><i class="bi bi-gear me-2 text-secondary"></i>Built With</h5>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2">Python</span>
+                    <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2">Flask</span>
+                    <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2">PyPDF2</span>
+                    <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2">Bootstrap 5</span>
+                    <span class="badge bg-primary-subtle text-primary rounded-pill px-3 py-2">JavaScript</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

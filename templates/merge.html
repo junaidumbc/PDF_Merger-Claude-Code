@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Merge PDFs{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container" style="max-width: 800px;">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Merge PDF Files</h2>
+            <p class="text-muted">Drop your PDFs below, reorder them, and merge into a single file.</p>
+        </div>
+
+        <!-- Upload Area -->
+        <div class="upload-zone" id="dropZone">
+            <div class="upload-zone-content">
+                <div class="upload-icon">
+                    <i class="bi bi-cloud-arrow-up-fill"></i>
+                </div>
+                <h5 class="fw-semibold mb-1">Drag & drop PDF files here</h5>
+                <p class="text-muted mb-3">or click to browse your files</p>
+                <label class="btn btn-primary rounded-pill px-4" for="fileInput">
+                    <i class="bi bi-folder2-open me-2"></i>Browse Files
+                </label>
+                <input type="file" id="fileInput" multiple accept=".pdf" class="d-none">
+            </div>
+        </div>
+
+        <!-- File List -->
+        <div id="fileListSection" class="mt-4 d-none">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h6 class="fw-semibold mb-0">
+                    <i class="bi bi-list-ol me-1"></i>
+                    Selected Files (<span id="fileCount">0</span>)
+                </h6>
+                <button class="btn btn-sm btn-outline-danger rounded-pill" id="clearAllBtn">
+                    <i class="bi bi-trash3 me-1"></i>Clear All
+                </button>
+            </div>
+            <ul class="file-list list-unstyled" id="fileList">
+                <!-- Files will be added here dynamically -->
+            </ul>
+        </div>
+
+        <!-- Merge Button -->
+        <div class="text-center mt-4" id="mergeSection" style="display: none;">
+            <button class="btn btn-primary btn-lg rounded-pill px-5" id="mergeBtn">
+                <i class="bi bi-union me-2"></i>Merge PDFs
+            </button>
+            <p class="text-muted small mt-2">
+                <i class="bi bi-info-circle me-1"></i>Files will be merged in the order shown above.
+            </p>
+        </div>
+
+        <!-- Progress -->
+        <div class="merge-progress mt-4 d-none" id="progressSection">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body text-center py-4">
+                    <div class="spinner-border text-primary mb-3" role="status">
+                        <span class="visually-hidden">Merging...</span>
+                    </div>
+                    <h6 class="fw-semibold">Merging your PDFs...</h6>
+                    <div class="progress mt-3" style="height: 6px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success State -->
+        <div class="mt-4 d-none" id="successSection">
+            <div class="success-card text-center">
+                <div class="success-icon-ring">
+                    <i class="bi bi-check-lg"></i>
+                </div>
+                <h5 class="fw-bold mt-3 mb-1">Merge Complete!</h5>
+                <p class="text-muted mb-3">Your merged PDF has been downloaded.</p>
+                <button class="btn btn-primary rounded-pill px-4" id="mergeAnotherBtn">
+                    <i class="bi bi-arrow-repeat me-2"></i>Merge More Files
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/merge.js') }}"></script>
+{% endblock %}
