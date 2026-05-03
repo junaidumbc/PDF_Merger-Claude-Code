@@ -32,6 +32,17 @@
     --shadow-lg: 0 10px 40px rgba(0,0,0,0.4);
 }
 
+/* ===== Theme transition ===== */
+body,
+.navbar,
+.footer,
+.card,
+.floating-card,
+.upload-zone,
+.success-card {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -103,23 +114,62 @@ body {
     background: rgba(79, 70, 229, 0.08);
 }
 
-.theme-toggle {
-    width: 36px;
-    height: 36px;
+/* ===== Theme Switch ===== */
+.theme-switch {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    border: none;
     padding: 0;
+}
+
+.theme-switch-track {
+    position: relative;
+    width: 52px;
+    height: 28px;
+    border-radius: 14px;
+    background: var(--border);
+    border: 1.5px solid var(--border);
+    transition: background 0.3s ease, border-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+[data-bs-theme="dark"] .theme-switch-track {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.theme-switch-thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50% !important;
-    transition: all 0.2s;
-    border-color: var(--border);
-    color: var(--text-muted);
+    font-size: 0.65rem;
+    color: var(--primary);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
 }
 
-.theme-toggle:hover {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: white;
+[data-bs-theme="dark"] .theme-switch-thumb {
+    transform: translateX(24px);
+    color: #f59e0b;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.theme-switch:hover .theme-switch-thumb {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+}
+
+.theme-switch:focus-visible .theme-switch-track {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
 /* ===== Hero Section ===== */
@@ -424,6 +474,11 @@ body {
 .file-item .remove-btn:hover {
     color: #ef4444;
     background: #fef2f2;
+}
+
+[data-bs-theme="dark"] .file-item .remove-btn:hover {
+    color: #f87171;
+    background: rgba(239, 68, 68, 0.15);
 }
 
 /* ===== Success State ===== */

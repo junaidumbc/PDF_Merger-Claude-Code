@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.className = theme === 'light'
             ? 'bi bi-moon-stars-fill'
             : 'bi bi-sun-fill';
+        toggle.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false');
     }
 
     // Set active nav link based on current path
